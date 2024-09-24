@@ -3,7 +3,10 @@ sequenceDiagram
     participant browser
     participant server
 
+    Note : When the button save is clicked, the browser sends user input to the server
+
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    Note: The server HTTP reponse 302 (URL redirect) 
     activate server
     server-->>browser: GET https://studies.cs.helsinki.fi/exampleapp/notes
     server-->>browser: HTML document
