@@ -1,0 +1,16 @@
+```mermaid
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note :the button save is clicked. Browser sends a request to the server with the note
+          (content type JSON)
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note: The server HTTP reponse 201 Created (No redirect) 
+
+    The browser starts executing the JavaScript code that adds the new note in the list
+    activate server
+    browser-->>server: sends the new note to the server
+    deactivate server
+
+```
